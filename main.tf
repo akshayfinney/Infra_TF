@@ -1,3 +1,7 @@
+# Define provider and region
+# The credentials should be located in your user path
+# Create 
+
 provider "aws" {
     region                  = "us-west-2"
     shared_credentials_file = "/Users/akshayfinney/.aws/credentials"
@@ -12,6 +16,10 @@ resource "aws_instance" "testservice" {
     instance_type = "t2.micro"
     tags = {
     Name = "textiqtest"
+    }
+    tags = {
+        Terraform   = "true"
+        Environment = "dev"
     }
 }
 
