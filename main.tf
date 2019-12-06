@@ -23,3 +23,14 @@ resource "aws_instance" "testservice" {
     }
 }
 
+# Adding S3 Bucket backend to store TF-Statefiles
+resource "aws_s3_bucket" "tfstate" {
+  bucket = "tf-dev-state"
+  acl    = "private"
+
+  tags = {
+    Name        = "tfstate"
+    Environment = "Dev"
+  }
+}
+
