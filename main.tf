@@ -15,9 +15,7 @@ resource "aws_instance" "testservice" {
     ami         = "${data.aws_ami.ubuntu.id}"
     instance_type = "t2.micro"
     tags = {
-    Name = "textiqtest"
-    }
-    tags = {
+        Name = "textiqtest"
         Terraform   = "true"
         Environment = "Dev"
     }
