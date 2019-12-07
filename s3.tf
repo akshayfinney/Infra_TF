@@ -19,10 +19,6 @@ resource "aws_s3_bucket" "tfstate" {
           }
       }
   }
-  tags = {
-    Name        = "tfstate"
-    Environment = "Dev"
-  }
 
 }
 
